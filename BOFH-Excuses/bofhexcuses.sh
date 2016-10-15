@@ -14,29 +14,6 @@ ExcuseArray=()
 LineCount=0
 Excuse=""
 
-function GenerateExcuse(){
-	
-	
-	Return $Excuse
-
-}
-
-function SelectExcuse(){
-
-	while read line ; do
-		
-		((LineCount++))
-		ExcuseArray+=("$line")
-
-	done < $ExcuseListPath
-	
-	rand=$[ $RANDOM % $LineCount]
-	$Excuse=${ExcuseArray[$rand]}
-
-	Return $Excuse
-
-}
-
 case "$1" in
 	-l|--list)
 		#Execute SelectExcuse
